@@ -14,6 +14,7 @@ import NavbarAuthControls from "./Components/NavbarAuthControls";
 import myPhoto from "./assets/Gita.jpg"
 
 
+
 function App() {
 	// create hook
 	const {
@@ -33,7 +34,9 @@ function App() {
 	const [hasApiAccess, setHasApiAccess] = useState(null);
 	const [email, setEmail] = useState(null);
 	
-
+	const devClient = process.env.REACT_APP_DEV_CLIENT;
+	const devServer = process.env.REACT_APP_DEV_SERVER;
+	
 /*	const fetchData = (endpoint) => { 
 
 	  setLoading(true); 
@@ -80,12 +83,24 @@ function App() {
 
 	); */
 	
-	function callApi(){
-		axios.get("http://localhost:4000/")
+/*	function callApi(){
+		axios.get(devServer)
 		 .then(response => setOutput(response.data), setError(null))
 			.catch(error => setOutput(null), setError(error?.message || "Unknown error occurred."))
 //			.then(response => console.log(response.data))
 //			.catch(error => console.log(error.message))
+	}*/
+	
+	function callApi() {
+	  axios.get(devServer)
+	    .then(response => {
+	      setOutput(response.data);
+	      setError(null);
+	    })
+	    .catch(error => {
+	      setOutput(null);
+	      setError(error?.message || "Unknown error occurred.");
+	    });
 	}
 	
 	async function callTopSecretApi(){
@@ -108,7 +123,7 @@ function App() {
 		}
 		try{
 			const token = await getAccessTokenSilently();
-			const response = await axios.get("http://localhost:4000/topsecret", {
+			const response = await axios.get(devServer+"/topsecret", {
 				headers: {
 					authorization: `Bearer ${token}`,
 				},
@@ -154,7 +169,7 @@ function App() {
 		try{
 			//const token = await getAccessTokenSilently();
 			const token = await getAccessTokenSilently();
-			const response = await axios.get("http://localhost:4000/email", {
+			const response = await axios.get(devServer+"/email", {
 				headers: {
 					authorization: `Bearer ${token}`,
 				},
@@ -193,7 +208,7 @@ function App() {
 		try{
 			//const token = await getAccessTokenSilently();
 			const token = await getAccessTokenSilently();
-			const response = await axios.get("http://localhost:4000/protected", {
+			const response = await axios.get(devServer+"/protected", {
 				headers: {
 					authorization: `Bearer ${token}`,
 				},
@@ -234,7 +249,7 @@ function App() {
 		}
 		try{
 			const token = await getAccessTokenSilently();
-			const response = await axios.get(`http://localhost:4000/users/${name}`, {
+			const response = await axios.get(devServer,`/users/${name}`, {
 				headers: {
 					authorization: `Bearer ${token}`,
 				},
