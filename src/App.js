@@ -436,11 +436,12 @@ function App() {
 			  }
 			/>
 		</Routes>
+		<h5>Build Version: 2.3.1</h5>
 		<h3>Acknowledgements</h3>
 		<p>Most of this webstore was build using help from Artificial Intelligence (AI) associated with Search Engines. It is fantastic. The Engineering profession has learnt to keep in synch with changing technology (Marsh, 2025, April 30). Nowadays, the improvements in AI have been seen in a negative way acrosss the globe (Trends Desk, 2026, Feb, 27).</p>
-		<p>As per INFOSYS FOUNDER Narayan Murthy (Forbes, 2026), if it is used as a tool, experience shows that it is not to be feared in anyway (@RepublicWorld, 2025, November, 17), and that includes GEN AI (Trends Desk, 2026, Feb, 27). My opinion is that everyone has to start somewhere, and unnecessary fear inhibits growth.</p>
+		<p>As per INFOSYS FOUNDER Narayan Murthy (Forbes, 2026), if it is used as a tool, experience shows that it is not to be feared in anyway (@RepublicWorld, 2025, November, 17), and that includes GEN AI (Trends Desk, 2026, Feb, 27). My opinion is that everyone has to start somewhere, and unmitigated fear inhibits growth.</p>
 		<h3>References</h3>
-		<p>1.Bhalotia, A.(2026). Shri Hari Supremely Venerable Swamiji Shree Ramsukhdasji Maharaj | श्री हरि: परम श्रद्धये स्वामीजी श्री रामसुखदासजी महाराज . https://www.shriswamiramsukhdasjimaharaj.com/index.html. Last Accessed: 21 Feb 2026</p> 
+		<p>1. Bhalotia, A.(2026). Shri Hari Supremely Venerable Swamiji Shree Ramsukhdasji Maharaj | श्री हरि: परम श्रद्धये स्वामीजी श्री रामसुखदासजी महाराज . https://www.shriswamiramsukhdasjimaharaj.com/index.html. Last Accessed: 21 Feb 2026</p> 
 		<p>2. garten-gg.(2026). Pixabay- Bird, Dove, Cage image, Free for use. https://pixabay.com/photos/bird-dove-cage-symbol-peace-5563436/</p>
 		<p>3. Geeta Press Gorakhpur.(2023, Dec, 7). Facebook- Narayan Narayan Narayan Narayan. https://www.facebook.com/share/p/18AhMoXMPH/</p>
 		<p>4. @RepublicWorld.(2025, November, 17).Narayan Murthy on the Future of AI at Republic Legends.https://www.youtube.com/shorts/A53qyC4xf2Q</p>

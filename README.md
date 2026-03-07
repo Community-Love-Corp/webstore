@@ -123,6 +123,9 @@ Test SSH connection using:
 ##### Version 2.3
 07 March 2026 Saturday 11:11: Subscribe button appearing now on SPM. Code for "purchase subscription with Stripe and Auth0" is in webstore/demo and apiserver/items4sale-api (See its Readme version 1.6) projects. Troubleshooting now.  
 
+##### Version 2.3.1
+08 March 2026 Sunday 12:18: Extended index.html to make Auth0Provider also request email and profile scopes. Since currently if only requests offline_access, the customer_ID is not being shown in the token, i.e. req.user["https://www.systematicdefence.tech/stripe_customer_id"] in backend's subscribe.js results in undefined. This is a more open setting than what is desired in most situations, hence this is temporary move.
+
 
 ##APPENDIX 1.0##
 You’re absolutely right about the root cause: FastComet is serving your built React app, so pulling new code from GitHub won’t change anything until you run: 

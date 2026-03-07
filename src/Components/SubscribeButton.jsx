@@ -13,8 +13,11 @@ export default function SubscribeButton({ product }) {
     try {
       console.log("Subscribe clicked");
 
-      const accessToken = await getAccessTokenSilently();
-      console.log("Token:", accessToken);
+      //const accessToken = await getAccessTokenSilently();
+      //console.log("Token:", accessToken);
+	  const accessToken = await getAccessTokenSilently({ detailedResponse: true });
+	  console.log(JSON.stringify(accessToken, null, 2));
+
 
       const res = await fetch(
         `${process.env.REACT_APP_DEV_SERVER}/api/subscribe-daily-quotes`,

@@ -15,7 +15,7 @@ root.render(
 		authorizationParams={{
 			redirect_uri: window.location.origin,
 			audience: audience,
-			scope: "offline_access"
+			scope: "openid profile email offline_access"
 		}}
 	>
 		<BrowserRouter>
