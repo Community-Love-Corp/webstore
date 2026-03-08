@@ -15,6 +15,12 @@ import proof from "./assets/Proof.jpg";
 import dove from "./assets/dove.jpg";
 import construction from "./assets/UnderDevelopment_FreePik.jpg";
 import ProtectedRoute from "./Components/ProtectedRoute";
+import Success from './pages/success';
+
+
+
+
+
 //import logger from "./logger.js";
 
 function App() {
@@ -39,74 +45,6 @@ function App() {
 	const devClient = process.env.REACT_APP_DEV_CLIENT;
 	const devServer = process.env.REACT_APP_DEV_SERVER;
 
-	
-/*	const fetchData = (endpoint) => { 
-
-	  setLoading(true); 
-
-	  setError(null); 
-
-	  axios.get(endpoint) // Replace with your API endpoint 
-
-	    .then(response => { 
-
-	      setData(response.data); 
-
-	      setLoading(false); 
-
-	    }) 
-
-	    .catch(err => { 
-
-	      setError(err.message); 
-
-	      setLoading(false); 
-
-	    }); 
-
-	}; 
-
-
-
-	return ( 
-
-	  <div style={{ padding: '20px' }}> 
-
-	    <h1>API Response Viewer</h1> 
-
-	    <button onClick={fetchData}>Fetch API Data</button> 
-
-	    {loading && <p>Loading...</p>} 
-
-	    {error && <p style={{ color: 'red' }}>Error: {error}</p>} 
-
-	    {data && <pre>{JSON.stringify(data, null, 2)}</pre>} 
-
-	  </div> 
-
-	); */
-	
-/*	function callApi(){
-		axios.get(devServer)
-		 .then(response => setOutput(response.data), setError(null))
-			.catch(error => setOutput(null), setError(error?.message || "Unknown error occurred."))
-//			.then(response => console.log(response.data))
-//			.catch(error => console.log(error.message))
-	}*/
-	
-/*	function callApi() {
-	  axios.get(devServer)
-	    .then(response => {
-//		  logger.info(devServer);
-		  console.log(devServer);
-	      setOutput(response.data);
-	      setError(null);
-	    })
-	    .catch(error => {
-	      setOutput(null);
-	      setError(error?.message || "Unknown error occurred.");
-	    });
-	}*/
 	
 	function callApi() { 
 	 
@@ -434,6 +372,10 @@ function App() {
 			      <PurchasePage />
 			    </ProtectedRoute>
 			  }
+			/>
+			<Route
+			  path="/success"
+			  element={<Success />}
 			/>
 		</Routes>
 		<h5>Build Version: 2.3.1</h5>

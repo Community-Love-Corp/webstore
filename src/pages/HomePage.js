@@ -11,7 +11,7 @@ export default function HomePage() {
     name: "Daily Gita Quotes Subscription",
     description: "Receive daily inspirational quotes from the Bhagavad Gita.",
     image: myPhoto,
-    priceId: "price_ABC123xyz", // your recurring Stripe Price ID
+    priceId: "price_1T0SNfK0y4ZB6QYbqM8g1aTQ", // your recurring Stripe Price ID
     amount: 1000,
     interval: "month",
   };
