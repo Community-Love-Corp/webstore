@@ -96,7 +96,7 @@ Test SSH connection using:
 ##### Version 0.13
 20 Feb 2026 14:38: Fixed api access issues from client in dev and production
 
-##### Version 1.0
+### Version 1.0
 28 Feb 2026 09:06: First official release to Production, with only Guest level access working.
 
 ##### Version 1.1
@@ -111,7 +111,7 @@ Test SSH connection using:
 ##### Version 1.3
 04 March 2026 19:19: Updated Signup.js and app.js to include api-key headers. In localhost, now all apis working except User detail.
 
-##### Version 2.0
+### Version 2.0
 04 March 2026 23:03: All endpoints operational in localhost.
 
 ##### Version 2.1
@@ -128,6 +128,12 @@ Test SSH connection using:
 
 ##### Version 2.3.2
 08 March 2026 Sunday 19:28: Works with Readme version 1.7 of apiserver.
+
+### Version 3.0
+30 April 2026 Thursday: Stripe payment interface functional:
+
+![Working Screenshot with Stripe](./screenshots/PaymentEvidence.jpg)
+
 
 
 ##APPENDIX 1.0##
