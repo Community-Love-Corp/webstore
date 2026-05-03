@@ -48,15 +48,15 @@ Answer: There are three ways- Github action, Post-pull hook on Fastcommet with S
 14 Feb 2026 15:47: When a new user is registered, automatically a stripe account for them is created. Product has been created and a start has been made for the flow for buying api. Finally, when a person logs in, now their unique email address is shown on the page. 
 ##### Version 0.7
 16 Feb 2026 14:12: Move to https://www.webstore.systematicdefence.tech completed successfully. React Website's UI components rendering properly. All code is in repositories in Github. In this release, Uudated API server references to match the Dev Server environment, so APIs from hyper-v test environment that had broken after migration, can start working again.
-##### Version 0.7.1
+###### Version 0.7.1
 16 Feb 2026 14:51: Added fastcomet folder name, which is connected to Github, for server and client. There are three branches- local (hyper-v environment on local workstation), dev (self) and master(Production). 
 ##### Version 0.8
 16 Feb 2026 14:51: Deployment yml added to manage deployment tasks after cpanel git update.
-##### Version 0.8.1
+###### Version 0.8.1
 16 Feb 2026 18:00: Fixed problems in .cpanel.yml yml syntax.
-##### Version 0.8.2
+###### Version 0.8.2
 16 Feb 2026 18:41: There is no node or npm on fastcomet. Hence, setup a node project and connected deployment yaml to use its bin folder for executing npm install and npm build.
-##### Version 0.8.3
+###### Version 0.8.3
 16 Feb 2026 18:54: To the .cpanel.yml, added command to restart. This code will be pulled into live environment. 
 ##### Version 0.9
 19 Feb 2026 13:57: Troubleshooting to get the page to render again. I pulled in version 0.8.3 into live environment. The button to run the .cpanel.yml deployment script did not work and the react app stopped rendering. So, I did those steps in .cpanel.yml manually for now, and pulled code up again. The app still did not render. While troubleshooting I realised that in my fastcomet repo, I had a .htaccess file, which was overwritten when I pulled up the code, i.e. there is no .htaccess file in this repo. So version 0.9 has the .htaccess file.
@@ -70,7 +70,7 @@ a. Remove the old static folder: rm -rf ./static
 b.  Copy the new static folder into the root: cp -r ./build/static ./
 c. Copy only the top level files from build: cp -r ./build/*.* ./
 
-##### Version 0.11.01
+###### Version 0.11.01
 20 Feb 2026 08:00: [NOT IMPLEMENTED] I did think about pushing code to github via the project.json scripts section, the ideal state. This can be handled at a later date. It requires a seamless connection to github from the PC hosting the development instance of the repository. In particular, setting a SSH connection to Github repo via  "git remote set-url origin git@github.com:username/repo.git". This would require Github to be setup to take passwordless authentication from the local server.
 {
   "scripts": {
@@ -96,7 +96,7 @@ Test SSH connection using:
 ##### Version 0.13
 20 Feb 2026 14:38: Fixed api access issues from client in dev and production
 
-##### Version 1.0
+#### Version 1.0
 28 Feb 2026 09:06: First official release to Production, with only Guest level access working.
 
 ##### Version 1.1
@@ -104,14 +104,12 @@ Test SSH connection using:
 
 ##### Version 1.2
 03 March 2026 12:06: Testing coded was added for production pilot testing. This fix removes it.
-
-##### Version 1.2
 03 March 2026 17:41: Server side checking of ReCaptcha implemented.
 
 ##### Version 1.3
 04 March 2026 19:19: Updated Signup.js and app.js to include api-key headers. In localhost, now all apis working except User detail.
 
-##### Version 2.0
+#### Version 2.0
 04 March 2026 23:03: All endpoints operational in localhost.
 
 ##### Version 2.1
@@ -123,11 +121,14 @@ Test SSH connection using:
 ##### Version 2.3
 07 March 2026 Saturday 11:11: Subscribe button appearing now on SPM. Code for "purchase subscription with Stripe and Auth0" is in webstore/demo and apiserver/items4sale-api (See its Readme version 1.6) projects. Troubleshooting now.  
 
-##### Version 2.3.1
+###### Version 2.3.1
 08 March 2026 Sunday 12:18: Extended index.html to make Auth0Provider also request email and profile scopes. Since currently if only requests offline_access, the customer_ID is not being shown in the token, i.e. req.user["https://www.systematicdefence.tech/stripe_customer_id"] in backend's subscribe.js results in undefined. This is a more open setting than what is desired in most situations, hence this is temporary move.
 
-##### Version 2.3.2
+###### Version 2.3.2
 08 March 2026 Sunday 19:28: Works with Readme version 1.7 of apiserver.
+
+#### Version 3.0
+04 May 2026 Monday 9:40 AM: Fixed 'Under Construction' Image, and added file named build_number.txt to src folder.
 
 
 ##APPENDIX 1.0##

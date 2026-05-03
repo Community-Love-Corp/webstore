@@ -46,6 +46,14 @@
   max-width: auto; /* optional */
 }
 
+.auth-box-main img.auth-img {
+  max-width: 100%;   /* stay within the auth-box-main width */
+  width: auto;       /* let the browser decide natural width up to 100% */
+  height: auto;      /* keep aspect ratio */
+  display: block;
+  margin: 0 auto;    /* center inside the box */
+}
+
 .auth-wrapper {
   display: flex;
   justify-content: center;
@@ -84,6 +92,13 @@ ul {
 .right-img { 
  right: 0; 
 } 
+
+.responsive-img {
+  max-width: auto;
+  max-height: 100%;
+  display: block;
+  margin: 0 auto; /* optional: keeps it centered */
+}
  
 
 @keyframes App-logo-spin {

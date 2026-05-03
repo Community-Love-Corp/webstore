@@ -280,8 +280,9 @@ function App() {
 				<h2>ii. Why charge for sharing God's word?</h2><p>This site is a one stop shop for selling quotations from the 'Good News Bible' akin Gita, as per Section 2b) above. Nowadays, nearly all 'current affairs' media outlets such as the Washington Post and the New Zealand Herald require a subscription to access their media content. This is ethical and a mark of quality in 2026, as they run a business which employs staff, and staff need to be paid.</p> 
 			</div>
 			<div className="auth-box-main">
-				<img src={construction} alt="under construction" /> 
-				<p style={{ color: "red"}} ><b>ALL OF THE WEBSITE IS FUNCTIONAL EXCEPT 'PURCHASE QUOTES' FUNCTIONALITY.</b></p>
+
+					<img src={construction} class="auth-img" alt="under construction" /> 
+					<p style={{ color: "red"}} ><b>ALL OF THE WEBSITE IS FUNCTIONAL EXCEPT 'PURCHASE QUOTES' FUNCTIONALITY.</b></p>
 			</div>
 			<h3>User: {email ?? "Not Logged in"} </h3>
 			<div className="auth-wrapper">

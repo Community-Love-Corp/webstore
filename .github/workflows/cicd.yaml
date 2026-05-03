@@ -1,0 +1,25 @@
+name: Build
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Increment build number
+        run: |
+          BUILD=$(cat build_number.txt)
+          BUILD=$((BUILD + 1))
+          echo $BUILD > build_number.txt
+
+      - name: Commit updated build number
+        run: |
+          git config user.name "CI"
+          git config user.email "ci@example.com"
+          git add build_number.txt
+          git commit -m "Increment build number to $BUILD" || echo "No changes"
+          git push || true
