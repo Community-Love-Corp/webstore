@@ -379,7 +379,11 @@ function App() {
 			  element={<Success />}
 			/>
 		</Routes>
-		<h5>Build Version: 2.3.1</h5>
+		<h5>Build Version:
+			<div>
+				<span id="build-number">Build: {process.env.REACT_APP_BUILD_NUMBER}</span>
+			</div>
+		</h5>
 		<h3>Acknowledgements</h3>
 		<p>Most of this webstore was build using help from Artificial Intelligence (AI) associated with Search Engines. It is fantastic. The Engineering profession has learnt to keep in synch with changing technology (Marsh, 2025, April 30). Nowadays, the improvements in AI have been seen in a negative way acrosss the globe (Trends Desk, 2026, Feb, 27).</p>
 		<p>As per INFOSYS FOUNDER Narayan Murthy (Forbes, 2026), if it is used as a tool, experience shows that it is not to be feared in anyway (@RepublicWorld, 2025, November, 17), and that includes GEN AI (Trends Desk, 2026, Feb, 27). My opinion is that everyone has to start somewhere, and unmitigated fear inhibits growth.</p>
