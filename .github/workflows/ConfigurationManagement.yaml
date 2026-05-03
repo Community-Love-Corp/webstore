@@ -19,9 +19,12 @@ jobs:
 
       - name: Commit updated build number
         run: |
-          sed -i "s/{{BUILD_NUMBER}}/$BUILD/g" path/to/index.html
+          sed -i "s/{{BUILD_NUMBER}}/$BUILD/g" src/App.js
           git config user.name "CI"
           git config user.email "general@systematicdefence.tech"
           git add build_number.txt
           git commit -m "Increment build number to $BUILD" || echo "No changes"
           git push || true
+
+      - name: Build React app
+        run: npm run build
