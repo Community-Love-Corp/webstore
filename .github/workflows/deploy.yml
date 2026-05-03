@@ -33,9 +33,13 @@ jobs:
         with:
           node-version: 18
 
+      - name: Install dependencies
+        run: npm install
+
       - name: Build React app
         run: npm run build
 
+#https://github.com/SamKirkland/FTP-Deploy-Action
       - name: Deploy to FastComet via SFTP
         uses: SamKirkland/FTP-Deploy-Action@v4.4.0
         with:
