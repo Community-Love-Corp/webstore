@@ -39,7 +39,7 @@ jobs:
       - name: Build React app
         run: # CI = false disables the turning of ESLINT warnings into errors.
           |
-            CI = false  
+            CI=false  
             npm run build
 
 #https://github.com/SamKirkland/FTP-Deploy-Action
