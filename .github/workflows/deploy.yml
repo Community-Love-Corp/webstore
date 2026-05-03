@@ -27,8 +27,10 @@ jobs:
           git commit -m "Increment build number to $BUILD" || echo "No changes"
           git push || true
 
-      - name: Install dependencies
-        run: npm install
+      - name: Use Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
 
       - name: Build React app
         run: npm run build
