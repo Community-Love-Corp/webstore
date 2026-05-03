@@ -44,7 +44,7 @@ jobs:
 
 #https://github.com/SamKirkland/FTP-Deploy-Action
       - name: Deploy to FastComet via SFTP
-        uses: SamKirkland/SFTP-Deploy-Action@v4.4.0
+        uses: SamKirkland/FTP-Deploy-Action@v4.4.0
         with:
           server: ${{ secrets.SFTP_HOST }}
           username: ${{ secrets.SFTP_USER }}
@@ -52,5 +52,5 @@ jobs:
           port: ${{ secrets.SFTP_PORT }}
           local-dir: build
           server-dir: ${{ secrets.SFTP_TARGET }}
-          protocol: sftp
+          protocol: ftps
           dangerous-clean-slate: true
