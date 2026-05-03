@@ -37,13 +37,13 @@ jobs:
         run: npm run build
 
       - name: Deploy to FastComet via SFTP
-        uses: SamKirkland/FTP-Deploy-Action@v4
+        uses: samkirkland/ftp-deploy-action@v4
         with:
           server: ${{ secrets.SFTP_HOST }}
           username: ${{ secrets.SFTP_USER }}
           password: ${{ secrets.SFTP_PASS }}
           port: ${{ secrets.SFTP_PORT }}
           local-dir: build
-          server-dir: ${{ secrets.SFTP_TARGET }}
-          protocol: sftp
-          dangerous-clean-slate: true
+#          server-dir: ${{ secrets.SFTP_TARGET }}
+#          protocol: sftp
+#          dangerous-clean-slate: true
