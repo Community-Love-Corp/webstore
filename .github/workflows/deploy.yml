@@ -3,6 +3,8 @@ name: Build and Deploy to FastComet hosting provider
 on:
   push:
     branches: [ prod, latest ]
+    paths-ignore: # Do not run the workflow when the commit push came via build_number.txt. This prevents infinite loop of adding numbers.
+      - build_number.txt
   workflow_dispatch: # Allows manual triggering
 
 jobs:
