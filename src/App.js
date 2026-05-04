@@ -255,6 +255,22 @@ function App() {
 			})();
 		}
 	}, [isAuthenticated]);
+	
+	useEffect(() => {
+	  fetch('/version.json', { cache: 'no-store' })
+	    .then(res => res.json())
+	    .then(data => {
+	      console.log("REMOTE BUILD (version.json):", data.version);
+	      console.log("EMBEDDED BUILD (env):", process.env.REACT_APP_BUILD_NUMBER);
+
+	      // Optional: auto-refresh if a new version is deployed
+	      if (data.version !== process.env.REACT_APP_BUILD_NUMBER) {
+	        console.log("New version detected — refreshing...");
+	        window.location.reload(true);
+	      }
+	    })
+	    .catch(err => console.error("version.json fetch error:", err));
+	}, []);
   	return (
 		<>
 	    <div className="App">
@@ -399,6 +415,9 @@ function App() {
 		<p><b>© 2026 Jyotirmay Sarna. The content on this site is original. Do not copy, repost, or use without permission.</b></p>
 	</>
   );
+  
+
+
   
 
 }
