@@ -12,6 +12,8 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.GH_ACTIONS_TOKEN }}
 
       - name: Increment build number
         run: |
@@ -22,12 +24,7 @@ jobs:
           echo "BUILD=$BUILD" >> $GITHUB_ENV
           echo "REACT_APP_BUILD_NUMBER=$BUILD" >> $GITHUB_ENV
 
-      - name: Configure GitHub token
-        run: |
-          git remote set-url origin https://x-access-token:${{ secrets.GH_ACTIONS_TOKEN }}@github.com/BoundlessLove/webstore.git
-
-
-      - name: Commit updated build number
+      - name: Configure Git Hub token and Commit updated build number
         run: |
           git config user.name "CI"
           git config user.email "general@systematicdefence.tech"
