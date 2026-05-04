@@ -3,7 +3,9 @@ name: Build and Deploy with Version
 on:
   push:
     branches: [ prod, latest ]
-    paths-ignore: # Do not run the workflow when the commit push came via build_number.txt. This prevents infinite loop of adding numbers.
+    paths-ignore: 
+# Do not run the workflow when the commit push came via build_number.txt. 
+# This prevents infinite loop of adding numbers as third step commits from within this workflow.
       - build_number.txt
   workflow_dispatch: # Allows manual triggering
 
@@ -14,7 +16,10 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
-        with:
+        with: 
+# Important to use this token as step 'Configure Git Hub token and Commit updated Build Number'
+# needs this specified as free Github plan organisation's private repo cannot be setup for writing
+# to other repos from within pipeline.
           token: ${{ secrets.GH_ACTIONS_TOKEN }}
 
       - name: Increment build number

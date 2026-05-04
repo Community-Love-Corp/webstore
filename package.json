@@ -17,6 +17,7 @@
     "winston": "^3.19.0"
   },
   "scripts": {
+	"predev": "node scripts/set-dev-build-number.js",
     "client": "cd src && npm start",
     "server": "cd api && node server.js",
     "dev": "concurrently -k -n client,server -c blue,green \"npm run client\" \"npm run server\"",

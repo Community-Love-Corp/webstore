@@ -130,6 +130,8 @@ Test SSH connection using:
 #### Version 3.0
 04 May 2026 Monday 9:40 AM: Fixed 'Under Construction' Image, and added file named build_number.txt to src folder.
 
+#### Version 4.0
+Build Version logic working for development and Production version added. Documented under ./ConfigurationManagement.md.
 
 ##APPENDIX 1.0##
 You’re absolutely right about the root cause: FastComet is serving your built React app, so pulling new code from GitHub won’t change anything until you run: 

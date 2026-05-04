@@ -266,3 +266,8 @@
 {"level":"info","message":"Email Claim: theman@systematicdefence.tech","timestamp":"2026-02-20T15:26:11.388Z"}
 {"level":"info","message":"AUTH NOW: {\n  \"https://systematicdefence.tech/email\": \"theman@systematicdefence.tech\",\n  \"https://www.systematicdefence.tech/stripe_customer_id\": \"cus_TyI2O5JgvpWgLC\",\n  \"iss\": \"https://dev-5ytq8xlvrdmg2d03.us.auth0.com/\",\n  \"sub\": \"auth0|69985cc7e4a947e5d09dcbfd\",\n  \"aud\": [\n    \"this is a unique identifier\",\n    \"https://dev-5ytq8xlvrdmg2d03.us.auth0.com/userinfo\"\n  ],\n  \"iat\": 1771601204,\n  \"exp\": 1771687604,\n  \"scope\": \"openid offline_access\",\n  \"azp\": \"apombnwMiJWNICbzBmar3rxMt48XOwYr\",\n  \"permissions\": []\n}","timestamp":"2026-02-20T15:26:51.725Z"}
 {"level":"info","message":"Email Claim: theman@systematicdefence.tech","timestamp":"2026-02-20T15:26:51.726Z"}
+{"level":"info","message":"server started","timestamp":"2026-05-04T04:01:15.076Z"}
+{"level":"info","message":"server started","timestamp":"2026-05-04T04:16:22.685Z"}
+{"level":"info","message":"server started","timestamp":"2026-05-04T04:24:52.460Z"}
+{"level":"info","message":"server started","timestamp":"2026-05-04T04:32:55.661Z"}
+{"level":"info","message":"server started","timestamp":"2026-05-04T04:33:32.816Z"}
