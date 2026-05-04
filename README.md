@@ -28,9 +28,9 @@ Note: If 'npm run dev' is run, then it creates a client and an api server instan
 
 ### Client
 ----------
-### CLIENT REPO SELF NAME IN GITHUB: <a href="https://github.com/BoundlessLove/webstore">webstore</a>
+#### CLIENT REPO SELF NAME IN GITHUB: <a href="https://github.com/BoundlessLove/webstore">webstore</a>
 
-### CLIENT DOMAIN NAME, HOSTED ON FASTCOMET: [Client](https://www.systematicdefence.tech)
+#### CLIENT DOMAIN NAME, HOSTED ON FASTCOMET: [Client](https://www.systematicdefence.tech)
 
 #### FASTCOMET FOLDER NAME: /home/systema1/webstore-production/webstore
 
