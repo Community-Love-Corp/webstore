@@ -79,11 +79,15 @@ Update your app.js with following snippet:
 ### 4.2 Add workflow – .github/workflows/deploy.yaml
 
 ``` yaml
-name: Build and Deploy to FastComet
+name: Build and Deploy with Version
 
 on:
   push:
     branches: [ prod, latest ]
+    paths-ignore: 
+# Do not run the workflow when the commit push came via build_number.txt. 
+# This prevents infinite loop of adding numbers as third step commits from within this workflow.
+      - build_number.txt
   workflow_dispatch: # Allows manual triggering
 
 jobs:
@@ -93,6 +97,31 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
+        with: 
+# Important to use this token as step 'Configure Git Hub token and Commit updated Build Number'
+# needs this specified as free Github plan organisation's private repo cannot be setup for writing
+# to other repos from within pipeline.
+          token: ${{ secrets.GH_ACTIONS_TOKEN }}
+
+      - name: Increment build number
+        run: |
+          RAW=$(cat build_number.txt)
+          BUILD=${RAW%.*}        # strip .0
+          BUILD=$((BUILD + 1))   # now safe
+          echo "$BUILD.0" > build_number.txt
+          echo "BUILD=$BUILD" >> $GITHUB_ENV
+          echo "REACT_APP_BUILD_NUMBER=$BUILD" >> $GITHUB_ENV
+
+      - name: Configure Git Hub token and Commit updated build number
+        run: |
+          git config user.name "CI"
+          git config user.email "general@systematicdefence.tech"
+          git add build_number.txt
+          git commit -m "Increment build number to $BUILD" || echo "No changes"
+          git push || true
+
+      - name: Export build number to React
+        run: echo "REACT_APP_BUILD_NUMBER=$(cat build_number.txt)" >> $GITHUB_ENV
 
       - name: Use Node.js
         uses: actions/setup-node@v3
@@ -105,23 +134,19 @@ jobs:
       - name: Build React app
         run: # CI = false disables the turning of ESLINT warnings into errors.
           |
-            CI=false  
+            CI=false
+            echo "{\"version\":\"$REACT_APP_BUILD_NUMBER\"}" > public/version.json  
             npm run build
 
-#https://github.com/SamKirkland/FTP-Deploy-Action
-      - name: Deploy to FastComet via SFTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.4.0
+      - name: Deploy via rsync
+        uses: burnett01/rsync-deployments@5.2
         with:
-          server: ${{ secrets.SFTP_HOST }}
-          username: ${{ secrets.SFTP_USER }}
-          password: ${{ secrets.SFTP_PASS }}
-          port: ${{ secrets.SFTP_PORT }}
-          local-dir: build/
-          server-dir: ${{ secrets.SFTP_TARGET }}
-          protocol: ftps
-          dangerous-clean-slate: true
-
-```
+          switches: -avzr --delete
+          path: build/
+          remote_path: ${{ secrets.SFTP_TARGET }}
+          remote_host: ${{ secrets.SFTP_HOST }}
+          remote_user: ${{ secrets.SFTP_USER }}
+          remote_key: ${{ secrets.SFTP_PRIVATE_KEY }}```
 
 ### 4.3 VERIFICATION
 [Assumption: Corresponding Github repo is setup as remote origin]
