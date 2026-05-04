@@ -5,31 +5,34 @@
 
 ## 2.0 ADMINISTRATION
 ### 2.1 CHANGE LOG
-Version; Date; Author; Description
-0.1; 4 May 2026; Sarna, J.; Initial Draft
+
+
+| Version  | Date          | Author     | Description                                                                      |                           
+|----------|---------------|------------|----------------------------------------------------------------------------------|
+| 1.0      | 04 MAY 2026   | Sarna, J.  | Initial Draft and Release to Production.                                         |                           
 
 ### 2.2 TABLE OF CONTENTS
 
-##### 1.0 SUMMARY
-##### 2.0 ADMINISTRATION
-##### 2.1 CHANGE LOG
-##### 2.2 TABLE OF CONTENTS
-##### 3.0 AIM:
-##### 4.0 PRODUCTION
-##### 4.1 PRE-REQ: 
-##### 4.2 Add workflow – .github/workflows/deploy.yaml
-##### 4.3 VERIFICATION
-##### 5.0 DEVELOPMENT 
 
 
-##### 5.1 ASSUMPTION
+- [1.0 SUMMARY](#10-summary)
+- [2.0 ADMINISTRATION](#20-administration)
+  - [2.1 CHANGE LOG](#21-change-log)
+  - [2.2 TABLE OF CONTENTS](#22-table-of-contents)
+- [3.0 AIM](#30-aim)
+- [4.0 PRODUCTION](#40-production)
+  - [4.1 PRE-REQ](#41-pre-req)
+  - [4.2 Add workflow – .github/workflows/deploy.yaml](#42-add-workflow-github-workflows-deployyaml)
+  - [4.3 VERIFICATION](#43-verification)
+- [5.0 DEVELOPMENT](#50-development)
+  - [5.1 ASSUMPTION](#51-assumption)
+    - [5.1.1 OPERATING DEVELOPMENT ENVIRONMENT](#511-operating-development-environment)
+  - [5.2 PLAN](#52-plan)
+    - [5.2.1 .env.development.local USE](#521-envdevelopmentlocal-use)
+    - [5.2.2 USE OF ‘PREDEV’ IN PACKAGE.JSON](#522-use-of-predev-in-packagejson)
+  - [5.3 PLAN IMPLEMENTATION](#53-plan-implementation)
+- [6.0 CONCLUSION](#60-conclusion)
 
-##### 5.1.1 OPERATING DEVELOPMENT ENVIRONMENT
-##### 5.2 PLAN
-##### 5.2.1 .env.development.local USE
-##### 5.2.2 USE OF ‘PREDEV’ IN PACKAGE.JSON
-##### 5.3 PLAN IMPLEMENTATION
-##### 6.0 CONCLUSION
 
 
 ## 3.0 AIM: 
@@ -51,12 +54,15 @@ b) ftps setup
 Add Secret variables to github actions for ftps operation required by fastcomet:
 
 
-Secret Name;	Definition;	Value
-SFTP_HOST;	your FastComet server hostname (e.g., s1.fastcomet.com);	au2.fcomet.com
-SFTP_USER;	your cPanel username;	systema1
-SFTP_PASS;	your cPanel password OR SFTP password;	<pwd>
-SFTP_PORT;	Ftps port;	21
-SFTP_TARGET;	path to your public_html folder (see below);	home/systema1/public_html/
+|SECRET NAME        |DEFINITION                                                 | VALUE                                        |
+|-------------------|-----------------------------------------------------------|----------------------------------------------|
+|SFTP_HOST          | Your FastComet server hostname (e.g., s1.fastcomet.com)   |	au2.fcomet.com                             |
+|SFTP_USER          | your cPanel username                                      |	systema1                                   |
+|SFTP_PRIVATE_KEY   | private key to access fastcomet - Id_ed25519              |	Navigate to C:\Users\moose\.ssh            |
+|SFTP_PORT          | Sftp port                                                 |   22                                         |
+|SFTP_TARGET        | path to your public_html folder (see below)               |	home/systema1/webstore-production/webstore |
+
+
 
 
 c) Preparation for Verification
