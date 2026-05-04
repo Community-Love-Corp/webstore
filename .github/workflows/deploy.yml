@@ -58,9 +58,11 @@ jobs:
         uses: community-love-corp/timestamp@v1
         id: date
 
+
       - name: Build React app
-        run: # CI = false disables the turning of ESLINT warnings into errors.
+        run:
           |
+            # CI = false disables the turning of ESLINT warnings into errors.
             CI=false
             echo "{\"version\":\"$REACT_APP_BUILD_NUMBER\"}" > public/version.json  
             npm run build
