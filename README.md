@@ -1,5 +1,5 @@
 <div align="center">
-  <h3>Jyotirmay Sarna</h3>
+  <h3>Jyotirmay Sarna, BE (Software), CEH</h3>
   <p>This work is original. Please do not copy, repost, or use without permission.</p>
   <a href="./LICENSE.md">View LICENSE</a>
 </div>
