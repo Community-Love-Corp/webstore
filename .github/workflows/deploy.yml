@@ -57,15 +57,14 @@ jobs:
             echo "{\"version\":\"$REACT_APP_BUILD_NUMBER\"}" > public/version.json  
             npm run build
 
-#https://github.com/SamKirkland/FTP-Deploy-Action
       - name: Deploy to FastComet via SFTP
         uses: SamKirkland/FTP-Deploy-Action@v4.4.0
         with:
           server: ${{ secrets.SFTP_HOST }}
           username: ${{ secrets.SFTP_USER }}
-          password: ${{ secrets.SFTP_PASS }}
           port: ${{ secrets.SFTP_PORT }}
+          protocol: sftp
           local-dir: build/
           server-dir: ${{ secrets.SFTP_TARGET }}
-          protocol: ftps
-          dangerous-clean-slate: true # Deletes the existing build folders before putting new one in 
+          private-key: ${{ secrets.SFTP_PRIVATE_KEY }}
+          dangerous-clean-slate: true
