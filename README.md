@@ -16,11 +16,15 @@ Note: If 'npm run dev' is run, then it creates a client and an api server instan
 ## Metadata and identification information for code ##
 
 SERVER REPO NAME IN GITHUB: items4sale-api
+
 SERVER DOMAIN NAME, HOSTED ON FASTCOMET: https://devapiserver.systematicdefence.tech
+
 FASTCOMET FOLDER NAME: Devapiserver
 
 CLIENT REPO SELF NAME IN GITHUB: webstore
+
 CLIENT DOMAIN NAME, HOSTED ON FASTCOMET: https://webstore.systematicdefence.tech
+
 FASTCOMET FOLDER NAME: Dev 
 
 Note: After every change made to github:
