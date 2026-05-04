@@ -1,3 +1,9 @@
+<div align="center">
+  <h3>Jyotirmay Sarna, BE (Software), CEH</h3>
+  <p>This work is original. Please do not copy, repost, or use without permission.</p>
+  <a href="./LICENSE.md">View LICENSE</a>
+</div>
+
 # Versions
 
 ## Purpose of code ##
@@ -9,25 +15,39 @@ Note: If 'npm run dev' is run, then it creates a client and an api server instan
 
 ## Metadata and identification information for code ##
 
-SERVER REPO NAME IN GITHUB: items4sale-api
-SERVER DOMAIN NAME, HOSTED ON FASTCOMET: https://devapiserver.systematicdefence.tech
-FASTCOMET FOLDER NAME: Devapiserver
+### Server
+-----------
+#### SERVER REPO NAME IN GITHUB: <a href="https://github.com/BoundlessLove/items4sale-api">items4sale-api</a>
 
-CLIENT REPO SELF NAME IN GITHUB: webstore
-CLIENT DOMAIN NAME, HOSTED ON FASTCOMET: https://webstore.systematicdefence.tech
-FASTCOMET FOLDER NAME: Dev 
+#### SERVER DOMAIN NAME, HOSTED ON FASTCOMET: [Backend](https://www.apiserver.systematicdefence.tech/)
 
-Note: After every change made to github:
+#### FASTCOMET FOLDER NAME: /home/systema1/webstore-production/prod-api-server
 
-***Use Cpanel Git repo to update from remote and run deployment tasks***
+#### TECHNOLOGY: Node.js Express Server, using oAuth and api keys for authentication and authorisation
 
-## Curly Fastcomet React App Setup  ##
 
-The application uses react technology, and is a single page application (SPA) for simplicity. It is sitting on Github, from where I push changes to fastcomet. Whenever manually push changes to code upto Github, and then pull the changes back down to Fastcomet, none of that applies to the react web application.
+### Client
+----------
+#### CLIENT REPO SELF NAME IN GITHUB: <a href="https://github.com/BoundlessLove/webstore">webstore</a>
 
-This occurs because first NPM build command needs to be run. Is there a build task to happen in an automated manner, when the code is pulled in fastcomet, like via a triggered YAML file I wondered. 
+#### CLIENT DOMAIN NAME, HOSTED ON FASTCOMET: [Client](https://www.systematicdefence.tech)
 
-Answer: There are three ways- Github action, Post-pull hook on Fastcommet with SSH key use, and Fastcomet's Git Version Control with Deployment script. The latter one suits me most as it is the shorted perceived route, at this time. See Appendix 1.0 for rationale. Basically, the deployment script is a .yml file called .cpanel.yml, and it is driven by a button in Cpanel Git repo. Cpanel git repo also has a button for updating repo from remote. Idea is that both will be run at the same time. In the end it did not work, and I just manually ran 'npm install' and 'npm run build' on workstation and commited them into GitHub.
+#### FASTCOMET FOLDER NAME: /home/systema1/webstore-production/webstore
+
+#### TECHNOLOGY: REACT
+
+### MAIL
+----------
+### CLIENT REPO SELF NAME IN GITHUB: Not on Git hub
+
+### CLIENT DOMAIN NAME, HOSTED ON FASTCOMET: [Email Server](https://emailserver.systematicdefence.tech/)
+
+#### FASTCOMET FOLDER NAME: /home/systema1/webstore-production/prod-signup-server
+
+#### TECHNOLOGY: Node.js Express Server, using api keys
+
+----------------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 
