@@ -1,3 +1,9 @@
+<div align="center">
+  <h3>Jyotirmay Sarna</h3>
+  <p>This work is original. Please do not copy, repost, or use without permission.</p>
+  <a href="./LICENSE.md">View LICENSE</a>
+</div>
+
 # Versions
 
 ## Purpose of code ##
@@ -339,3 +345,7 @@ So, the SPA’s code has the logic to interpret what the permissions translate t
 
 ##REFERENCES##
 1. Mafia Codes.(2021, Mar, 28). YouTube- Auth0 authentication in Reactjs using OAuth2. <url> 
+
+<div align="center">
+  © Jyotirmay Sarna. This work is original. Please Do not copy, repost or use without permission.
+</div>
