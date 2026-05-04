@@ -15,9 +15,10 @@ jobs:
 
       - name: Increment build number
         run: |
-          BUILD=$(cat build_number.txt)
-          BUILD=$((BUILD + 1))
-          echo $BUILD > build_number.txt
+          RAW=$(cat build_number.txt)
+          BUILD=${RAW%.*}        # strip .0
+          BUILD=$((BUILD + 1))   # now safe
+          echo "$BUILD.0" > build_number.txt
           echo "BUILD=$BUILD" >> $GITHUB_ENV
           echo "REACT_APP_BUILD_NUMBER=$BUILD" >> $GITHUB_ENV
 
