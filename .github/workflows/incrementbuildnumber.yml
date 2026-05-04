@@ -1,8 +1,8 @@
 name: Build and Deploy to FastComet
 
 on:
-  push:
-   branches: [ prod, latest ]
+#  push:
+#   branches: [ prod, latest ]
   workflow_dispatch: # Allows manual triggering
 
 jobs:

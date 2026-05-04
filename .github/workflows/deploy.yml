@@ -1,8 +1,8 @@
 name: Build and Deploy to FastComet
 
 on:
-#  push:
-#    branches: [ prod, latest ]
+  push:
+    branches: [ prod, latest ]
   workflow_dispatch: # Allows manual triggering
 
 jobs:
@@ -27,6 +27,9 @@ jobs:
           git add build_number.txt
           git commit -m "Increment build number to $BUILD" || echo "No changes"
           git push || true
+
+      - name: Export build number to React
+        run: echo "REACT_APP_BUILD_NUMBER=$(cat build_number.txt)" >> $GITHUB_ENV
 
       - name: Use Node.js
         uses: actions/setup-node@v3
