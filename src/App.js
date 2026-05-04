@@ -44,7 +44,9 @@ function App() {
 	
 	const devClient = process.env.REACT_APP_DEV_CLIENT;
 	const devServer = process.env.REACT_APP_DEV_SERVER;
+	console.log("APP LOADED — BUILD:", process.env.REACT_APP_BUILD_NUMBER);
 	console.log("BUILD NUMBER:", process.env.REACT_APP_BUILD_NUMBER);
+	console.log("BUILD NUMBER RAW:", process.env.REACT_APP_BUILD_NUMBER);
 
 	
 	function callApi() { 
