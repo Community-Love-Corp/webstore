@@ -54,11 +54,6 @@ jobs:
         uses: community-love-corp/timestamp@v1
         id: date
 
-      - name: Get today’s date
-        uses: community-love-corp/timestamp@v1
-        id: date
-
-
       - name: Build React app
         run:
           |
@@ -66,10 +61,11 @@ jobs:
             CI=false
             echo "{\"version\":\"$REACT_APP_BUILD_NUMBER\"}" > public/version.json  
             npm run build
-      
+
       - name: Export build date
         run: echo "REACT_APP_BUILD_DATE=${{ steps.date.outputs.today }}" >> $GITHUB_ENV
-				
+
+
       - name: Deploy via rsync
         uses: burnett01/rsync-deployments@5.2
         with:
