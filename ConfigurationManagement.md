@@ -36,9 +36,11 @@
 
 
 ## 3.0 AIM: 
-A) PRODUCTION: On a push to a repo in github, run ‘npm run build’, create a ftps connection to fastcomet and run replace the build folder. For verification purposes, upgrade the build version.
+A) STRATEGY: Every push to Github is a Major version Release. Every push locally is a Minor version Release.
 
-B) DEVELOPMENT: When running npm run dev command, the localhost version should also show the current build version
+B) PRODUCTION: On a push to a repo in github, run ‘npm run build’, create a sftps connection to fastcomet and run replace the build folder. For verification purposes, upgrade the build version.
+
+C) DEVELOPMENT: When running npm run dev command, the localhost version should also show the current build version
 
 ## 4.0 PRODUCTION
 
@@ -60,21 +62,31 @@ Add Secret variables to github actions for ftps operation required by fastcomet:
 |SFTP_USER          | your cPanel username                                      |	systema1                                   |
 |SFTP_PRIVATE_KEY   | private key to access fastcomet - Id_ed25519              |	Navigate to C:\Users\moose\.ssh            |
 |SFTP_PORT          | Sftp port                                                 |   22                                         |    
-|SFTP_TARGET        | path to your public_html folder (see below)               |	home/systema1/webstore-production/webstore/build 
+|SFTP_TARGET        | path to your public_html folder (see below)               |	home/systema1/webstore-production/webstore/build/
 
 
 
 
 c) Preparation for Verification
+
 i) Do not create a variable in your .env files for REACT_APP_BUILD_NUMBER. This is because React loads environment variables in this order:
+
 •  .env.production
+
 •  .env
+
 •  Variables injected via $GITHUB_ENV
+
 •  System environment variables
 
+
 ii) Display
+
 Update your app.js with following snippet:
-		<h5><u>Build Version:</u> <span id="build-number">{process.env.REACT_APP_BUILD_NUMBER}</span></h5>
+
+```html
+<h5><u>Build Version:</u> <span id="build-number">{process.env.REACT_APP_BUILD_NUMBER}</span></h5>
+```
 
 ### 4.2 Add workflow – .github/workflows/deploy.yaml
 
@@ -147,6 +159,7 @@ jobs:
           remote_host: ${{ secrets.SFTP_HOST }}
           remote_user: ${{ secrets.SFTP_USER }}
           remote_key: ${{ secrets.SFTP_PRIVATE_KEY }}```
+```
 
 ### 4.3 VERIFICATION
 [Assumption: Corresponding Github repo is setup as remote origin]
@@ -211,7 +224,7 @@ React dev server loads the correct build number
 
 ### 5.3 PLAN IMPLEMENTATION 
 
-🧩 Step 1 — Create a script scripts/set-dev-build-number.js
+#### STEP 1 — Create a script scripts/set-dev-build-number.js
 Create a folder:
 
 - scripts/
@@ -239,8 +252,7 @@ a. Reads build_number.txt
 
 b. Writes .env.development.local
 
-
-🧩 Step 2 — Update your package.json scripts
+#### Step 2 — Update your package.json scripts
 
 Modify your scripts like this:
 
