@@ -44,6 +44,7 @@ function App() {
 	
 	const devClient = process.env.REACT_APP_DEV_CLIENT;
 	const devServer = process.env.REACT_APP_DEV_SERVER;
+	console.log("BUILD NUMBER:", process.env.REACT_APP_BUILD_NUMBER);
 
 	
 	function callApi() { 
@@ -379,6 +380,8 @@ function App() {
 			  element={<Success />}
 			/>
 		</Routes>
+
+
 		<h5><u>Build Version:</u> <span id="build-number">{process.env.REACT_APP_BUILD_NUMBER}</span></h5>
 		<h3>Acknowledgements</h3>
 		<p>Most of this webstore was build using help from Artificial Intelligence (AI) associated with Search Engines. It is fantastic. The Engineering profession has learnt to keep in synch with changing technology (Marsh, 2025, April 30). Nowadays, the improvements in AI have been seen in a negative way acrosss the globe (Trends Desk, 2026, Feb, 27).</p>
