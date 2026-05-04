@@ -1,4 +1,4 @@
-name: Build and Deploy to FastComet
+name: Build and Deploy to FastComet hosting provider
 
 on:
   push:
