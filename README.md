@@ -1,27 +1,50 @@
+<div align="center">
+  <h3>Jyotirmay Sarna, BE (Software), CEH</h3>
+  <p>This work is original. Please do not copy, repost, or use without permission.</p>
+  <a href="./LICENSE.md">View LICENSE</a>
+</div>
+
 # Versions
 
-## Purpose of code
-Modern Implementation of OAuth using help from Mr. Mittal (Mafia Codes, 2021, Mar, 28). 
+## Purpose of code ##
+In 2026, Identity management is crucial in the success of any application. To merge common needs of Authenticatio and Authorisation, such as single signon (needs domain controller) and defence against Cybersecurity vectors such as DDOS and encryption breaking attacks, and OpenID access, given an application exists on the web, a platform like OAuth is ideal for small to medium sized business inorder to scale down infrastructure costs. Heck, this application does not even have a database, and yet it uses oAuth for all communciations implementing perfect Authentication and Authorisation. Refer to Appendix 2.0 to understand how to implement a simple solution like this in Auth0. I started the solution of this modern Implementation of OAuth using Auth0 with help from Mr. Mittal (Mafia Codes, 2021, Mar, 28). 
 
-SERVER REPO NAME IN GITHUB: items4sale-api
-SERVER DOMAIN NAME, HOSTED ON FASTCOMET: https://devapiserver.systematicdefence.tech
-FASTCOMET FOLDER NAME: Devapiserver
+Note: If 'npm run dev' is run, then it creates a client and an api server instance on ports 3000 and 4000, respectively. The api server here is a stub, which exists within the client. When existing in this dev environment, the server exists but the client does not. To exist from client use command:
 
-CLIENT REPO SELF NAME IN GITHUB: webstore
-CLIENT DOMAIN NAME, HOSTED ON FASTCOMET: https://webstore.systematicdefence.tech
-FASTCOMET FOLDER NAME: Dev 
+- npx kill-port 3000   (i may need to create a devkill task in NPM) 
 
-Note: After every change made to github:
+## Metadata and identification information for code ##
 
-***Use Cpanel Git repo to update from remote and run deployment tasks***
+### Server
+-----------
+#### SERVER REPO NAME IN GITHUB: <a href="https://github.com/BoundlessLove/items4sale-api">items4sale-api</a>
 
-## Curly Fastcomet React App Setup  ##
+#### SERVER DOMAIN NAME, HOSTED ON FASTCOMET: [Backend](https://www.apiserver.systematicdefence.tech/)
 
-The application uses react technology, and is a single page application (SPA) for simplicity. It is sitting on Github, from where I push changes to fastcomet. Whenever manually push changes to code upto Github, and then pull the changes back down to Fastcomet, none of that applies to the react web application.
+#### FASTCOMET FOLDER NAME: /home/systema1/webstore-production/prod-api-server
 
-This occurs because first NPM build command needs to be run. Is there a build task to happen in an automated manner, when the code is pulled in fastcomet, like via a triggered YAML file I wondered. 
+#### TECHNOLOGY: Node.js Express Server, using oAuth and api keys for authentication and authorisation
 
-Answer: There are three ways- Github action, Post-pull hook on Fastcommet with SSH key use, and Fastcomet's Git Version Control with Deployment script. The latter one suits me most as it is the shorted perceived route, at this time. See Appendix 1.0 for rationale. Basically, the deployment script is a .yml file called .cpanel.yml, and it is driven by a button in Cpanel Git repo. Cpanel git repo also has a button for updating repo from remote. Idea is that both will be run at the same time. In the end it did not work, and I just manually ran 'npm install' and 'npm run build' on workstation and commited them into GitHub.
+
+### Client
+----------
+### CLIENT REPO SELF NAME IN GITHUB: <a href="https://github.com/BoundlessLove/webstore">webstore</a>
+
+### CLIENT DOMAIN NAME, HOSTED ON FASTCOMET: [Client](https://www.systematicdefence.tech)
+
+#### FASTCOMET FOLDER NAME: /home/systema1/webstore-production/webstore
+
+#### TECHNOLOGY: REACT
+
+### MAIL
+----------
+### CLIENT REPO SELF NAME IN GITHUB: Not on Git hub
+
+### CLIENT DOMAIN NAME, HOSTED ON FASTCOMET: [Email Server](https://emailserver.systematicdefence.tech/)
+
+#### FASTCOMET FOLDER NAME: /home/systema1/webstore-production/prod-signup-server
+
+#### TECHNOLOGY: Node.js Express Server, using api keys
 
 
 
