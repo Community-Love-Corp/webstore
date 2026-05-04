@@ -59,8 +59,8 @@ Add Secret variables to github actions for ftps operation required by fastcomet:
 |SFTP_HOST          | Your FastComet server hostname (e.g., s1.fastcomet.com)   |	au2.fcomet.com                             |
 |SFTP_USER          | your cPanel username                                      |	systema1                                   |
 |SFTP_PRIVATE_KEY   | private key to access fastcomet - Id_ed25519              |	Navigate to C:\Users\moose\.ssh            |
-|SFTP_PORT          | Sftp port                                                 |   22                                         |
-|SFTP_TARGET        | path to your public_html folder (see below)               |	home/systema1/webstore-production/webstore |
+|SFTP_PORT          | Sftp port                                                 |   22                                         |    
+|SFTP_TARGET        | path to your public_html folder (see below)               |	home/systema1/webstore-production/webstore/build 
 
 
 
