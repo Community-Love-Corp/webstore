@@ -57,14 +57,25 @@ jobs:
             echo "{\"version\":\"$REACT_APP_BUILD_NUMBER\"}" > public/version.json  
             npm run build
 
-      - name: Deploy to FastComet via SFTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.4.0
+      - name: Deploy via rsync
+        uses: burnett01/rsync-deployments@5.2
         with:
-          server: ${{ secrets.SFTP_HOST }}
-          username: ${{ secrets.SFTP_USER }}
-          port: ${{ secrets.SFTP_PORT }}
-          protocol: sftp
-          local-dir: build/
-          server-dir: ${{ secrets.SFTP_TARGET }}
-          private-key: ${{ secrets.SFTP_PRIVATE_KEY }}
-          dangerous-clean-slate: true
+          switches: -avzr --delete
+          path: build/
+          remote_path: ${{ secrets.SFTP_TARGET }}
+          remote_host: ${{ secrets.SFTP_HOST }}
+          remote_user: ${{ secrets.SFTP_USER }}
+          remote_key: ${{ secrets.SFTP_PRIVATE_KEY }}
+
+
+
+#      - name: Deploy to FastComet via SFTP
+#        uses: SamKirkland/FTP-Deploy-Action@v4.4.0
+#        with:
+#          server: ${{ secrets.SFTP_HOST }}
+#         username: ${{ secrets.SFTP_USER }}
+#         port: ${{ secrets.SFTP_PORT }}
+#         protocol: sftp
+#         local-dir: build/
+#         server-dir: ${{ secrets.SFTP_TARGET }}
+#          dangerous-clean-slate: true
